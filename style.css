@@ -1,32 +1,33 @@
 /*
  * style.css - Estilos para o Ranking de Filmes (Tema Preto e Vermelho)
+ * RESPONSIVIDADE GARANTIDA POR MEDIA QUERIES
  */
 
 /* ================================================= */
-/* RESET E ESTILOS GERAIS */
+/* ESTILOS GERAIS E RESET */
 /* ================================================= */
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #111; /* Fundo preto */
-    color: #ccc; /* Texto claro */
+    background-color: #111; 
+    color: #ccc; 
     line-height: 1.6;
 }
 
 a {
-    color: #e50914;
+    color: #e50914; 
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #ff4d4f;
+    color: #ff4d4f; 
 }
 
 ol {
@@ -34,7 +35,7 @@ ol {
 }
 
 /* ================================================= */
-/* CABEÇALHO FIXO */
+/* 1. CABEÇALHO (#header) */
 /* ================================================= */
 
 #header {
@@ -77,24 +78,21 @@ ol {
 }
 
 /* ================================================= */
-/* LAYOUT PRINCIPAL */
+/* LAYOUT PRINCIPAL (Desktop: 2 Colunas) */
 /* ================================================= */
 
 #main-container {
     display: flex;
-    padding-top: 70px; /* Espaço para não ficar atrás do header */
+    padding-top: 70px; /* Abaixo do header fixo */
 }
 
-/* ================================================= */
-/* MENU LATERAL */
-/* ================================================= */
-
 #sidebar {
+    /* ESTILOS FIXOS DE DESKTOP */
     position: fixed;
-    top: 70px;
+    top: 70px; 
     left: 0;
-    width: 250px;
-    height: calc(100vh - 70px);
+    width: 250px; 
+    height: calc(100vh - 70px); 
     z-index: 900;
     background: #0d0d0d;
     padding: 20px 15px;
@@ -124,38 +122,30 @@ ol {
 
 .movie-list-nav a:hover {
     color: #fff;
-    background-color: #330000;
+    background-color: #330000; 
 }
 
-/* ================================================= */
-/* CONTEÚDO PRINCIPAL */
-/* ================================================= */
-
 #main-content {
-    margin-left: 250px;
-    flex-grow: 1;
+    /* Desloca para dar espaço ao sidebar fixo */
+    margin-left: 250px; 
+    flex-grow: 1; 
     padding: 30px;
     max-width: 900px;
     background-color: #111;
 }
 
-#main-content h2 {
-    color: #e50914;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
 /* ================================================= */
-/* FILMES */
+/* ESTILOS DE SEÇÃO E IMAGENS */
 /* ================================================= */
 
 .movie-ranking {
-    background: linear-gradient(to bottom, #1a1a1a, #141414);
+    background: #1a1a1a;
     border: 1px solid #330000;
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, #1a1a1a, #141414);
 }
 
 .ranking-header {
@@ -179,58 +169,60 @@ ol {
     padding: 5px 10px;
     background-color: #330000;
     border-radius: 5px;
+    white-space: nowrap; 
 }
 
+/* IMAGEM RESPONSIVA: ESSENCIAL */
 .movie-poster {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin-top: 15px;
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+    width: 100%; /* Ocupa a largura total do container */
+    max-width: 300px; /* Limite em desktop */
+    margin: 15px auto; 
     border: 2px solid #e50914;
     box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
 }
 
-/* ================================================= */
 /* BOTÕES DE AÇÃO */
-/* ================================================= */
-
 .locadora-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-top: 15px;
+    align-items: center;
 }
 
-.locadora-actions button {
-    background: #e50914;
-    border: none;
-    color: #fff;
+.action-btn {
     padding: 10px 15px;
-    margin-right: 10px;
+    border: none;
     border-radius: 5px;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s;
 }
 
-.locadora-actions button:hover {
-    background: #ff4d4f;
+.emprestar-btn {
+    background-color: #008000;
+    color: #fff;
 }
 
-.locadora-actions button:disabled {
-    background: #444;
-    cursor: not-allowed;
+.vender-btn {
+    background-color: #e50914;
+    color: #fff;
 }
 
 .status-locacao {
     margin-top: 10px;
     font-style: italic;
+    color: #888;
+    flex-basis: 100%; 
 }
 
 .status-vendido {
-    color: red;
+    color: #ffcc00; 
     font-weight: bold;
 }
-
-/* ================================================= */
-/* RODAPÉ */
-/* ================================================= */
 
 .site-footer {
     text-align: center;
@@ -242,77 +234,75 @@ ol {
 }
 
 /* ================================================= */
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE: MOBILE E TABLET PEQUENO (max-width: 768px) */
 /* ================================================= */
 
-@media (max-width: 900px) {
-    #main-container {
-        flex-direction: column;
+@media (max-width: 768px) {
+    
+    /* 1. AJUSTES DO CABEÇALHO */
+    #header {
+        padding: 0 15px;
+        /* Esconde a navegação principal (links Home, Contato, etc.) */
+        justify-content: center; 
     }
 
+    .main-nav {
+        display: none; 
+    }
+
+    /* 2. AJUSTES DO LAYOUT PRINCIPAL */
+    #main-container {
+        /* Empilha os elementos */
+        display: block; 
+    }
+
+    /* 3. AJUSTES DA BARRA LATERAL (Sidebar vira topo do conteúdo) */
     #sidebar {
-        position: relative;
-        width: 100%;
+        /* Remove o posicionamento fixo */
+        position: static; 
+        width: 100%; 
         height: auto;
         border-right: none;
-        border-bottom: 1px solid #330000;
+        border-bottom: 2px solid #e50914;
+        padding: 15px;
     }
 
-    .movie-list-nav ol {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .movie-list-nav ol li {
-        margin: 5px 10px;
-    }
-
+    /* Remove o margin-left que compensava o sidebar fixo */
     #main-content {
-        margin-left: 0;
-        max-width: 100%;
+        margin-left: 0; 
         padding: 20px;
     }
 
-    .movie-poster {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    #header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        margin-top: 10px;
-    }
-
-    .main-nav ul li {
-        margin: 10px 0;
-    }
-
-    .ranking-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .rank-number {
-        margin-top: 10px;
-    }
-
-    .locadora-actions {
+    /* Ajuste da lista do sidebar para ficar horizontal em mobile */
+    .movie-list-nav ol {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 5px;
     }
 
-    .locadora-actions button {
-        width: 80%;
+    .movie-list-nav ol li {
+        margin: 5px 0;
+        /* 3 itens por linha */
+        flex-basis: calc(33.33% - 10px); 
+        text-align: center;
+        font-size: 0.8em;
+    }
+    
+    /* 4. AJUSTES DA SEÇÃO DE FILMES */
+    .ranking-header {
+        /* Empilha título e rank */
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+    
+    /* 5. AJUSTES DOS BOTÕES */
+    .locadora-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .action-btn {
+        width: 100%;
     }
 }
