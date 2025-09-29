@@ -1,302 +1,386 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ranking de Filmes - Locadora</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Top 20 Filmes - A Locadora Pessoal</title>
+    <style>
+        /* Reset básico */
+        * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+
+        body { background: #f4f4f4; color: #333; line-height: 1.5; }
+
+        header {
+            background: #222;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 { font-size: 1.5rem; }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li { margin-left: 15px; }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h2 { margin-bottom: 15px; text-align: center; }
+
+        .movie {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .movie img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .movie-content {
+            flex: 1;
+        }
+
+        .movie h3 { margin-bottom: 10px; }
+
+        .movie p { margin-bottom: 10px; }
+
+        .actions button {
+            padding: 8px 12px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .actions button:hover { opacity: 0.8; }
+
+        .emprestar { background: #4CAF50; color: white; }
+        .vender { background: #f44336; color: white; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media(max-width:768px){
+            .movie { flex-direction: column; align-items: center; text-align: center; }
+            .movie img { margin: 0 0 15px 0; width: 200px; }
+            .actions button { margin-bottom: 5px; }
+        }
+    </style>
 </head>
 <body>
-  <header id="header">
-    <div class="logo">
-      <h1>🎬 Locadora</h1>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#ranking">Ranking</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-      </ul>
+
+<header>
+    <h1>A Locadora do Top 20</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#ranking">Ranking</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 
-  <div id="main-container">
-    <aside id="sidebar">
-      <h2>Filmes</h2>
-      <nav class="movie-list-nav">
-        <ol>
-          <li><a href="#filme1">1 - O Poderoso Chefão</a></li>
-          <li><a href="#filme2">2 - Um Sonho de Liberdade</a></li>
-          <li><a href="#filme3">3 - O Senhor dos Anéis</a></li>
-          <li><a href="#filme4">4 - Inception</a></li>
-          <li><a href="#filme5">5 - Interstellar</a></li>
-          <li><a href="#filme6">6 - Matrix</a></li>
-          <li><a href="#filme7">7 - Cidade de Deus</a></li>
-          <li><a href="#filme8">8 - Clube da Luta</a></li>
-          <li><a href="#filme9">9 - Pulp Fiction</a></li>
-          <li><a href="#filme10">10 - Forrest Gump</a></li>
-          <li><a href="#filme11">11 - Gladiador</a></li>
-          <li><a href="#filme12">12 - Bastardos Inglórios</a></li>
-          <li><a href="#filme13">13 - O Silêncio dos Inocentes</a></li>
-          <li><a href="#filme14">14 - O Resgate do Soldado Ryan</a></li>
-          <li><a href="#filme15">15 - Os Infiltrados</a></li>
-          <li><a href="#filme16">16 - Django Livre</a></li>
-          <li><a href="#filme17">17 - Pantera Negra</a></li>
-          <li><a href="#filme18">18 - Titanic</a></li>
-          <li><a href="#filme19">19 - Star Wars: Uma Nova Esperança</a></li>
-          <li><a href="#filme20">20 - Avatar</a></li>
-        </ol>
-      </nav>
-    </aside>
+<main>
+    <h2 id="home">Meu Top 20 Filmes Favoritos</h2>
 
-    <main id="main-content">
-      <h2 id="ranking">🏆 Top 20 Filmes</h2>
-
-      <!-- Filmes 1 a 20 -->
-      <section id="filme1" class="movie-ranking">
-        <div class="ranking-header"><h3>O Poderoso Chefão</h3><span class="rank-number">#1</span></div>
-        <img src="https://m.media-amazon.com/images/I/51rOnIjLqzL._AC_.jpg" alt="Poster O Poderoso Chefão" class="movie-poster">
-        <p>Um épico do crime que explora poder, família e traição na máfia italiana dos EUA.</p>
-        <p id="status-filme1">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme1','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme1','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <section id="filme2" class="movie-ranking">
-        <div class="ranking-header"><h3>Um Sonho de Liberdade</h3><span class="rank-number">#2</span></div>
-        <img src="https://m.media-amazon.com/images/I/51NiGlapXlL._AC_.jpg" alt="Poster Um Sonho de Liberdade" class="movie-poster">
-        <p>Dentro da prisão de Shawshank, dois homens criam uma amizade que desafia as circunstâncias.</p>
-        <p id="status-filme2">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme2','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme2','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <section id="filme3" class="movie-ranking">
-        <div class="ranking-header"><h3>O Senhor dos Anéis: O Retorno do Rei</h3><span class="rank-number">#3</span></div>
-        <img src="https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_.jpg" alt="Poster O Senhor dos Anéis" class="movie-poster">
-        <p>A conclusão da saga épica: batalhas, sacrifícios, esperança e a destruição do Anel.</p>
-        <p id="status-filme3">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme3','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme3','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <section id="filme4" class="movie-ranking">
-        <div class="ranking-header"><h3>Inception</h3><span class="rank-number">#4</span></div>
-        <img src="https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg" alt="Poster Inception" class="movie-poster">
-        <p>Dom Cobb invade sonhos para extrair segredos — mas seu próprio subconsciente é sua maior barreira.</p>
-        <p id="status-filme4">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme4','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme4','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <section id="filme5" class="movie-ranking">
-        <div class="ranking-header"><h3>Interstellar</h3><span class="rank-number">#5</span></div>
-        <img src="https://m.media-amazon.com/images/I/71n2W6-2bhL._AC_SY679_.jpg" alt="Poster Interstellar" class="movie-poster">
-        <p>Uma missão interestelar busca novos mundos para a humanidade, enquanto o tempo e o vínculo emocional desafiam a lógica.</p>
-        <p id="status-filme5">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme5','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme5','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <section id="filme6" class="movie-ranking">
-        <div class="ranking-header"><h3>Matrix</h3><span class="rank-number">#6</span></div>
-        <img src="https://m.media-amazon.com/images/I/51EG732BV3L._AC_.jpg" alt="Poster Matrix" class="movie-poster">
-        <p>Neo descobre que a realidade é uma simulação e luta contra máquinas por liberdade humana.</p>
-        <p id="status-filme6">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme6','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme6','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <section id="filme7" class="movie-ranking">
-        <div class="ranking-header"><h3>Cidade de Deus</h3><span class="rank-number">#7</span></div>
-        <img src="https://m.media-amazon.com/images/I/51IjSkf0VIL._AC_.jpg" alt="Poster Cidade de Deus" class="movie-poster">
-        <p>Um panorama cru da ascensão do crime em uma favela do Rio de Janeiro, contado com ritmo intenso.</p>
-        <p id="status-filme7">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme7','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme7','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <section id="filme8" class="movie-ranking">
-        <div class="ranking-header"><h3>Clube da Luta</h3><span class="rank-number">#8</span></div>
-        <img src="https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg" alt="Poster Clube da Luta" class="movie-poster">
-        <p>Um narrador insatisfeito cria uma organização subversiva com Tyler Durden para libertar-se da alienação.</p>
-        <p id="status-filme8">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme8','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme8','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <section id="filme9" class="movie-ranking">
-        <div class="ranking-header"><h3>Pulp Fiction</h3><span class="rank-number">#9</span></div>
-        <img src="https://m.media-amazon.com/images/I/51k0qaI5NUL._AC_.jpg" alt="Poster Pulp Fiction" class="movie-poster">
-        <p>Histórias de crime entrelaçadas em Los Angeles, com estilo narrativo e diálogos icônicos.</p>
-        <p id="status-filme9">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme9','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme9','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <section id="filme10" class="movie-ranking">
-        <div class="ranking-header"><h3>Forrest Gump</h3><span class="rank-number">#10</span></div>
-        <img src="https://m.media-amazon.com/images/I/61M7eAzyxYL._AC_SY679_.jpg" alt="Poster Forrest Gump" class="movie-poster">
-        <p>A trajetória de um homem simples que, sem saber, influenciou importantes eventos da história americana.</p>
-        <p id="status-filme10">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme10','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme10','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <!-- Continue da mesma forma para os filmes 11 a 20 -->
-      <!-- Filme 11 -->
-      <section id="filme11" class="movie-ranking">
-        <div class="ranking-header"><h3>Gladiador</h3><span class="rank-number">#11</span></div>
-        <img src="https://m.media-amazon.com/images/I/51A5cHQhSqL._AC_.jpg" alt="Poster Gladiador" class="movie-poster">
-        <p>Maximus, general traído, torna-se gladiador e busca justiça contra o imperador corrupto.</p>
-        <p id="status-filme11">Disponível para locação ou venda.</p>
-        <div class="locadora-actions">
-          <button onclick="simularLocacao('filme11','Emprestar')">Emprestar</button>
-          <button onclick="simularLocacao('filme11','Vender')">Vender</button>
-        </div>
-      </section>
-
-      <!-- Filme 12 -->
-      <section id="filme12" class="movie-ranking">
-        <div class="ranking-header"><h3>Bastardos Inglórios</h3><span class="rank-number">
-            <span class="rank-number">#12</span></div>
-            <img src="https://m.media-amazon.com/images/I/51iLZL3vFLL._AC_.jpg" alt="Poster Bastardos Inglórios" class="movie-poster">
-            <p>Durante a Segunda Guerra, soldados judeus planejam eliminar líderes nazistas em território inimigo.</p>
-            <p id="status-filme12">Disponível para locação ou venda.</p>
-            <div class="locadora-actions">
-              <button onclick="simularLocacao('filme12','Emprestar')">Emprestar</button>
-              <button onclick="simularLocacao('filme12','Vender')">Vender</button>
+    <!-- Filme 1 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/1/1c/The_Godfather.jpg" alt="O Poderoso Chefão">
+        <div class="movie-content">
+            <h3>#1: O Poderoso Chefão (1972)</h3>
+            <p>Uma saga familiar sobre crime, poder e lealdade. Clássico absoluto do cinema.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
             </div>
-          </section>
-    
-          <!-- Filme 13 -->
-          <section id="filme13" class="movie-ranking">
-            <div class="ranking-header"><h3>O Silêncio dos Inocentes</h3><span class="rank-number">#13</span></div>
-            <img src="https://m.media-amazon.com/images/I/51G4mY5e3BL._AC_.jpg" alt="Poster O Silêncio dos Inocentes" class="movie-poster">
-            <p>A agente Clarice Starling busca ajuda do canibal Hannibal Lecter para capturar um serial killer.</p>
-            <p id="status-filme13">Disponível para locação ou venda.</p>
-            <div class="locadora-actions">
-              <button onclick="simularLocacao('filme13','Emprestar')">Emprestar</button>
-              <button onclick="simularLocacao('filme13','Vender')">Vender</button>
+        </div>
+    </div>
+
+    <!-- Filme 2 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/3/3b/ShawshankRedemptionMoviePoster.jpg" alt="Um Sonho de Liberdade">
+        <div class="movie-content">
+            <h3>#2: Um Sonho de Liberdade (1994)</h3>
+            <p>História de esperança e amizade na prisão. Inspira e emociona a cada cena.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
             </div>
-          </section>
-    
-          <!-- Filme 14 -->
-          <section id="filme14" class="movie-ranking">
-            <div class="ranking-header"><h3>O Resgate do Soldado Ryan</h3><span class="rank-number">#14</span></div>
-            <img src="https://m.media-amazon.com/images/I/51wXJQ0tKCL._AC_.jpg" alt="Poster O Resgate do Soldado Ryan" class="movie-poster">
-            <p>Soldados americanos recebem a missão de resgatar um paracaidista atrás das linhas inimigas na 2ª Guerra.</p>
-            <p id="status-filme14">Disponível para locação ou venda.</p>
-            <div class="locadora-actions">
-              <button onclick="simularLocacao('filme14','Emprestar')">Emprestar</button>
-              <button onclick="simularLocacao('filme14','Vender')">Vender</button>
+        </div>
+    </div>
+
+    <!-- Filme 3 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/3/3c/Dark_Knight.jpg" alt="Batman: O Cavaleiro das Trevas">
+        <div class="movie-content">
+            <h3>#3: Batman: O Cavaleiro das Trevas (2008)</h3>
+            <p>Filme de super-herói definitivo. Heath Ledger brilha como Coringa em uma Gotham sombria.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
             </div>
-          </section>
-    
-          <!-- Filme 15 -->
-          <section id="filme15" class="movie-ranking">
-            <div class="ranking-header"><h3>Os Infiltrados</h3><span class="rank-number">#15</span></div>
-            <img src="https://m.media-amazon.com/images/I/51GIlSl3iML._AC_.jpg" alt="Poster Os Infiltrados" class="movie-poster">
-            <p>Policial infiltrado e informante da máfia disputam quem descobre a identidade do outro primeiro.</p>
-            <p id="status-filme15">Disponível para locação ou venda.</p>
-            <div class="locadora-actions">
-              <button onclick="simularLocacao('filme15','Emprestar')">Emprestar</button>
-              <button onclick="simularLocacao('filme15','Vender')">Vender</button>
+        </div>
+    </div>
+
+    <!-- Filme 4 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/3/3b/Pulp_Fiction.jpg" alt="Pulp Fiction">
+        <div class="movie-content">
+            <h3>#4: Pulp Fiction (1994)</h3>
+            <p>Narrativa não-linear e diálogos icônicos de Quentin Tarantino. Um clássico cult.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
             </div>
-          </section>
-    
-          <!-- Filme 16 -->
-          <section id="filme16" class="movie-ranking">
-            <div class="ranking-header"><h3>Django Livre</h3><span class="rank-number">#16</span></div>
-            <img src="https://m.media-amazon.com/images/I/51J+zJY9qUL._AC_.jpg" alt="Poster Django Livre" class="movie-poster">
-            <p>Um ex-escravo liberto se alia a um caçador de recompensas para resgatar sua esposa das mãos dos escravistas.</p>
-            <p id="status-filme16">Disponível para locação ou venda.</p>
-            <div class="locadora-actions">
-              <button onclick="simularLocacao('filme16','Emprestar')">Emprestar</button>
-              <button onclick="simularLocacao('filme16','Vender')">Vender</button>
+        </div>
+    </div>
+
+    <!-- Filme 5 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/3/32/Schindlers_List_movie.jpg" alt="A Lista de Schindler">
+        <div class="movie-content">
+            <h3>#5: A Lista de Schindler (1993)</h3>
+            <p>Um retrato poderoso do Holocausto, mostrando coragem e humanidade em tempos sombrios.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
             </div>
-          </section>
-    
-          <!-- Filme 17 -->
-          <section id="filme17" class="movie-ranking">
-            <div class="ranking-header"><h3>Pantera Negra</h3><span class="rank-number">#17</span></div>
-            <img src="https://m.media-amazon.com/images/I/51yqGBcJqBL._AC_.jpg" alt="Poster Pantera Negra" class="movie-poster">
-            <p>T'Challa retorna a Wakanda para governar, enfrentando ameaças internas e externas ao seu reino.</p>
-            <p id="status-filme17">Disponível para locação ou venda.</p>
-            <div class="locadora-actions">
-              <button onclick="simularLocacao('filme17','Emprestar')">Emprestar</button>
-              <button onclick="simularLocacao('filme17','Vender')">Vender</button>
+        </div>
+    </div>
+
+    <!-- Filme 6 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/8/87/The_Lord_of_the_Rings_-_The_Return_of_the_King.jpg" alt="O Retorno do Rei">
+        <div class="movie-content">
+            <h3>#6: O Senhor dos Anéis: O Retorno do Rei (2003)</h3>
+            <p>O épico final da trilogia de Tolkien, com batalhas grandiosas e narrativa magistral.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
             </div>
-          </section>
-    
-          <!-- Filme 18 -->
-          <section id="filme18" class="movie-ranking">
-            <div class="ranking-header"><h3>Titanic</h3><span class="rank-number">#18</span></div>
-            <img src="https://m.media-amazon.com/images/I/51r3mA8rQ3L._AC_.jpg" alt="Poster Titanic" class="movie-poster">
-            <p>História de amor entre Jack e Rose a bordo do navio mais famoso da história, com tragédia à vista.</p>
-            <p id="status-filme18">Disponível para locação ou venda.</p>
-            <div class="locadora-actions">
-              <button onclick="simularLocacao('filme18','Emprestar')">Emprestar</button>
-              <button onclick="simularLocacao('filme18','Vender')">Vender</button>
+        </div>
+    </div>
+
+    <!-- Filme 7 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/6/67/Forrest_Gump_poster.jpg" alt="Forrest Gump">
+        <div class="movie-content">
+            <h3>#7: Forrest Gump (1994)</h3>
+            <p>Um homem simples vivencia eventos históricos e mostra que gentileza e amor importam.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
             </div>
-          </section>
-    
-          <!-- Filme 19 -->
-          <section id="filme19" class="movie-ranking">
-            <div class="ranking-header"><h3>Star Wars: Uma Nova Esperança</h3><span class="rank-number">#19</span></div>
-            <img src="https://m.media-amazon.com/images/I/51YzY9HFVKL._AC_.jpg" alt="Poster Star Wars" class="movie-poster">
-            <p>A jornada de Luke Skywalker para se tornar Jedi e liderar a luta contra o Império Galáctico.</p>
-            <p id="status-filme19">Disponível para locação ou venda.</p>
-            <div class="locadora-actions">
-              <button onclick="simularLocacao('filme19','Emprestar')">Emprestar</button>
-              <button onclick="simularLocacao('filme19','Vender')">Vender</button>
+        </div>
+    </div>
+
+    <!-- Filme 8 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/2/2e/Inception_%282010%29.jpg" alt="A Origem">
+        <div class="movie-content">
+            <h3>#8: A Origem (2010)</h3>
+            <p>Um thriller de ficção científica sobre sonhos, realidade e um conceito visual inovador.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
             </div>
-          </section>
-    
-          <!-- Filme 20 -->
-          <section id="filme20" class="movie-ranking">
-            <div class="ranking-header"><h3>Avatar</h3><span class="rank-number">#20</span></div>
-            <img src="https://m.media-amazon.com/images/I/41kTVLeW1CL._AC_.jpg" alt="Poster Avatar" class="movie-poster">
-            <p>Em Pandora, um fuzileiro desenvolve empatia pelos Na’vi enquanto se vê dividido entre mundos.</p>
-            <p id="status-filme20">Disponível para locação ou venda.</p>
-            <div class="locadora-actions">
-              <button onclick="simularLocacao('filme20','Emprestar')">Emprestar</button>
-              <button onclick="simularLocacao('filme20','Vender')">Vender</button>
+        </div>
+    </div>
+
+    <!-- Filme 9 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/f/fc/Fight_Club_poster.jpg" alt="Clube da Luta">
+        <div class="movie-content">
+            <h3>#9: Clube da Luta (1999)</h3>
+            <p>Crítica social sobre consumismo e identidade. Violento, inteligente e inesquecível.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
             </div>
-          </section>
-    
-          <!-- Sobre -->
-          <section id="sobre">
-            <h2>Sobre</h2>
-            <p>Bem-vindo à nossa locadora virtual! Aqui você pode simular a locação ou venda dos seus filmes favoritos, com pôsteres e descrições.</p>
-          </section>
-    
-          <footer class="site-footer">
-            <p>&copy; 2025 Locadora Virtual. Todos os direitos reservados.</p>
-          </footer>
-        </main>
-      </div>
-    
-      <script src="locadora.js"></script>
-    </body>
-    </html>
-    
+        </div>
+    </div>
+
+    <!-- Filme 10 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/c/c1/The_Matrix_Poster.jpg" alt="Matrix">
+        <div class="movie-content">
+            <h3>#10: Matrix (1999)</h3>
+            <p>Um marco na ficção científica e ação, questionando a realidade com efeitos inovadores.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filme 11 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/0/0c/Seven_Samurai.jpg" alt="Os Sete Samurais">
+        <div class="movie-content">
+            <h3>#11: Os Sete Samurais (1954)</h3>
+            <p>Clássico japonês de samurais, influenciando filmes de ação e épicos ao redor do mundo.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filme 12 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/8/86/Spirited_Away_Japanese_Poster.jpg" alt="A Viagem de Chihiro">
+        <div class="movie-content">
+            <h3>#12: A Viagem de Chihiro (2001)</h3>
+            <p>Animação do Studio Ghibli com fantasia rica e personagens inesquecíveis.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filme 13 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/5/5b/Parasite_poster.jpg" alt="Parasita">
+        <div class="movie-content">
+            <h3>#13: Parasita (2019)</h3>
+            <p>Família pobre infiltra-se na vida de uma família rica, expondo desigualdades sociais com humor e tensão.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filme 14 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/d/dc/Cinema_Paradiso_poster.jpg" alt="Cinema Paradiso">
+        <div class="movie-content">
+            <h3>#14: Cinema Paradiso (1988)</h3>
+            <p>Uma homenagem ao cinema e à memória de um garoto e seu amigo projecionista.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filme 15 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/8/85/The_Big_Lebowski_poster.jpg" alt="O Grande Lebowski">
+        <div class="movie-content">
+            <h3>#15: O Grande Lebowski (1998)</h3>
+            <p>Comédia icônica sobre confusões de um homem preguiçoso conhecido como “The Dude”.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filme 16 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/d/d2/Back_to_the_Future.jpg" alt="De Volta para o Futuro">
+        <div class="movie-content">
+            <h3>#16: De Volta para o Futuro (1985)</h3>
+            <p>Marty McFly viaja no tempo e precisa garantir que seus pais se encontrem para não desaparecer.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filme 17 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/4/41/Psycho_%281960%29.jpg" alt="Psicose">
+        <div class="movie-content">
+            <h3>#17: Psicose (1960)</h3>
+            <p>Suspense de Alfred Hitchcock, com a icônica cena do chuveiro e trama surpreendente.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filme 18 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/3/34/The_Green_Mile_poster.jpg" alt="À Espera de um Milagre">
+        <div class="movie-content">
+            <h3>#18: À Espera de um Milagre (1999)</h3>
+            <p>História tocante de compaixão e fé em um corredor da morte.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filme 19 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/b/bc/Interstellar_film_poster.jpg" alt="Interestelar">
+        <div class="movie-content">
+            <h3>#19: Interestelar (2014)</h3>
+            <p>Odisseia espacial épica explorando amor, tempo e a sobrevivência da humanidade.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filme 20 -->
+    <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/8/87/Cidade_de_Deus.jpg" alt="Cidade de Deus">
+        <div class="movie-content">
+            <h3>#20: Cidade de Deus (2002)</h3>
+            <p>Retrato intenso da violência no Rio de Janeiro, com estilo visual inovador e narrativa envolvente.</p>
+            <div class="actions">
+                <button class="emprestar">Emprestar (R$ 5,00)</button>
+                <button class="vender">Vender (R$ 30,00)</button>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    &copy; 2025 A Locadora Pessoal - Todos os direitos reservados
+</footer>
+
+</body>
+</html>
