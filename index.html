@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Top 20 Filmes - A Locadora Pessoal</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="header">
+        <div class="logo">
+            <h1>A Locadora do Top 20</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Saiba Mais</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li><a href="#share">Compartilhar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="main-container">
+        <aside id="sidebar">
+            <h2>Lista de Filmes</h2>
+            <nav class="movie-list-nav">
+                <ol>
+                    <li><a href="#filme1">1. O Poderoso Chefão</a></li>
+                    <li><a href="#filme2">2. Um Sonho de Liberdade</a></li>
+                    <li><a href="#filme3">3. O Senhor dos Anéis: O Retorno do Rei</a></li>
+                    <li><a href="#filme4">4. Pulp Fiction</a></li>
+                    <li><a href="#filme5">5. A Lista de Schindler</a></li>
+                    <li><a href="#filme6">6. Inception</a></li>
+                    <li><a href="#filme7">7. Clube da Luta</a></li>
+                    <li><a href="#filme8">8. Matrix</a></li>
+                    <li><a href="#filme9">9. Interestelar</a></li>
+                    <li><a href="#filme10">10. Gladiador</a></li>
+                </ol>
+            </nav>
+        </aside>
+
+        <main id="main-content">
+            <h2>O Meu Ranking Pessoal: A Locadora de Filmes Favoritos</h2>
+            <p>Role para ver os filmes e clique nas opções "Emprestar" ou "Vender" para simular a transação.</p>
+
+            <!-- Filme 1 -->
+            <section class="movie-ranking" id="filme1">
+                <div class="ranking-header">
+                    <h3>#1: O Poderoso Chefão (1972)</h3>
+                    <span class="rank-number">1º Lugar</span>
+                </div>
+                <p>Um dos maiores clássicos do cinema, marcando a história da máfia com atuações inesquecíveis.</p>
+                <img src="https://m.media-amazon.com/images/I/51rOnIjLqzL._AC_SY679_.jpg" alt="Poster do filme O Poderoso Chefão" class="movie-poster">
+
+                <div class="locadora-actions">
+                    <button class="action-btn emprestar-btn" onclick="simularLocacao('filme1', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                    <button class="action-btn vender-btn" onclick="simularLocacao('filme1', 'Vender')">Vender (R$ 30,00)</button>
+                    <p class="status-locacao" id="status-filme1">Disponível para locação.</p>
+                </div>
+            </section>
+
+            <!-- Filme 2 -->
+            <section class="movie-ranking" id="filme2">
+                <div class="ranking-header">
+                    <h3>#2: Um Sonho de Liberdade (1994)</h3>
+                    <span class="rank-number">2º Lugar</span>
+                </div>
+                <p>Uma emocionante história de esperança e amizade dentro de uma prisão de segurança máxima.</p>
+                <img src="https://m.media-amazon.com/images/I/51NiGlapXlL._AC_.jpg" alt="Poster do filme Um Sonho de Liberdade" class="movie-poster">
+
+                <div class="locadora-actions">
+                    <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                    <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                    <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+                </div>
+            </section>
+
+            <!-- Repita a mesma estrutura até o #20 -->
+            <!-- Exemplo de mais um -->
+            <section class="movie-ranking" id="filme3">
+                <div class="ranking-header">
+                    <h3>#3: O Senhor dos Anéis: O Retorno do Rei (2003)</h3>
+                    <span class="rank-number">3º Lugar</span>
+                </div>
+                <p>Uma conclusão épica para a maior saga de fantasia do cinema moderno.</p>
+                <img src="https://m.media-amazon.com/images/I/71d7rfpMhzL._AC_SY679_.jpg" alt="Poster do filme O Senhor dos Anéis: O Retorno do Rei" class="movie-poster">
+
+                <div class="locadora-actions">
+                    <button class="action-btn emprestar-btn" onclick="simularLocacao('filme3', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                    <button class="action-btn vender-btn" onclick="simularLocacao('filme3', 'Vender')">Vender (R$ 30,00)</button>
+                    <p class="status-locacao" id="status-filme3">Disponível para locação.</p>
+                </div>
+            </section>
+
+            <footer class="site-footer">
+                <p>&copy; 2025 Ranking Pessoal de Filmes. Todos os direitos reservados.</p>
+            </footer>
+
+            <script src="locadora.js"></script>
+        </main>
+    </div>
+</body>
+</html>
