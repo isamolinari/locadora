@@ -2,16 +2,12 @@
  * locadora.js - Lógica de simulação de locação
  */
 
-// Objeto para rastrear o status de cada filme (1: Vendido, 2: Emprestado)
+// Objeto para rastrear o status de cada filme
 const statusFilmes = {};
 
 function simularLocacao(tituloFilme, tipoAcao) {
-    // 1. Encontra o ID do filme (limpa a string para corresponder ao ID HTML)
-    // Remove espaços, converte para minúsculas e remove acentos
-    const filmeId = tituloFilme.toLowerCase()
-                                .replace(/\s/g, '')
-                                .normalize('NFD').replace(/[\u0300-\u036f]/g, ""); 
-                                
+    // 1. Encontra o ID do filme (ex: "Filme 1" -> "filme1")
+    const filmeId = tituloFilme.toLowerCase().replace(/\s/g, ''); 
     const statusElement = document.getElementById(`status-${filmeId}`);
     
     if (!statusElement) {
@@ -25,7 +21,7 @@ function simularLocacao(tituloFilme, tipoAcao) {
     if (statusFilmes[filmeId] === 1) {
         mensagem = `ERRO: O filme "${tituloFilme}" já foi VENDIDO e não está mais disponível.`;
         statusElement.textContent = mensagem;
-        statusElement.classList.add('status-vendido');
+        statusElement.classList.add('status-vendido'); // Aplica o estilo de erro/vendido
         return;
     }
 
@@ -37,9 +33,9 @@ function simularLocacao(tituloFilme, tipoAcao) {
     } else if (tipoAcao === 'Vender') {
         mensagem = `SIMULAÇÃO: Parabéns! Você VENDEU o filme "${tituloFilme}" por R$ 30,00. Estoque esgotado!`;
         statusFilmes[filmeId] = 1; // Status 1: Vendido
-        statusElement.classList.add('status-vendido');
+        statusElement.classList.add('status-vendido'); // Aplica o estilo de sucesso/vendido
         
-        // Desabilitar os botões após a venda (melhor UX)
+        // Opcional: Desabilitar os botões após a venda (melhor UX)
         const botoes = statusElement.closest('.locadora-actions').querySelectorAll('button');
         botoes.forEach(btn => btn.disabled = true);
     }
