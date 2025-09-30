@@ -4,383 +4,375 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Top 20 Filmes - A Locadora Pessoal</title>
-    <style>
-        /* Reset básico */
-        * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-
-        body { background: #f4f4f4; color: #333; line-height: 1.5; }
-
-        header {
-            background: #222;
-            color: #fff;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        header h1 { font-size: 1.5rem; }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        nav ul li { margin-left: 15px; }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        h2 { margin-bottom: 15px; text-align: center; }
-
-        .movie {
-            background: #fff;
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .movie img {
-            width: 150px;
-            height: auto;
-            border-radius: 5px;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-
-        .movie-content {
-            flex: 1;
-        }
-
-        .movie h3 { margin-bottom: 10px; }
-
-        .movie p { margin-bottom: 10px; }
-
-        .actions button {
-            padding: 8px 12px;
-            margin-right: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .actions button:hover { opacity: 0.8; }
-
-        .emprestar { background: #4CAF50; color: white; }
-        .vender { background: #f44336; color: white; }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #222;
-            color: white;
-            margin-top: 40px;
-        }
-
-        @media(max-width:768px){
-            .movie { flex-direction: column; align-items: center; text-align: center; }
-            .movie img { margin: 0 0 15px 0; width: 200px; }
-            .actions button { margin-bottom: 5px; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>A Locadora do Top 20</h1>
-    <nav>
+<header id="header">
+    <div class="logo">
+        <h1>A Locadora do Top 20</h1>
+    </div>
+    <nav class="main-nav">
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#ranking">Ranking</a></li>
+            <li><a href="#about">Saiba Mais</a></li>
             <li><a href="#contact">Contato</a></li>
+            <li><a href="#share">Compartilhar</a></li>
         </ul>
     </nav>
 </header>
 
-<main>
-    <h2 id="home">Meu Top 20 Filmes Favoritos</h2>
+<div id="main-container">
 
-    <!-- Filme 1 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/1/1c/The_Godfather.jpg" alt="O Poderoso Chefão">
-        <div class="movie-content">
-            <h3>#1: O Poderoso Chefão (1972)</h3>
-            <p>Uma saga familiar sobre crime, poder e lealdade. Clássico absoluto do cinema.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+    <aside id="sidebar">
+        <h2>Lista de Filmes</h2>
+        <nav class="movie-list-nav">
+            <ol>
+                <li><a href="#filme1">1. [O Poderoso Chefão ]</a></li>
+                <li><a href="#filme2">2. [Um Sonho de Liberdade ]</a></li>
+                <li><a href="#filme3">3. [O Senhor dos Anéis: A Sociedade do Anel ]</a></li>
+                <li><a href="#filme4">4. [O Senhor dos Anéis: As Duas Torres ]</a></li>
+                <li><a href="#filme5">5. [O Senhor dos Anéis: O Retorno do Rei ]</a></li>
+                <li><a href="#filme6">6. [Batman: O Cavaleiro das Trevas ]</a></li>
+                <li><a href="#filme7">7. [Inception (A Origem) ]</a></li>
+                <li><a href="#filme8">8. [Forrest Gump ]</a></li>
+                <li><a href="#filme9">9. [Clube da Luta ]</a></li>
+                <li><a href="#filme10">10. [Pulp Fiction ]</a></li>
+                <li><a href="#filme11">11. [Matrix ]</a></li>
+                <li><a href="#filme12">12. [Gladiador ]</a></li>
+                <li><a href="#filme13">13. [Titanic ]</a></li>
+                <li><a href="#filme14">14. [Star Wars: O Império Contra-Ataca ]</a></li>
+                <li><a href="#filme15">15. [O Silêncio dos Inocentes ]</a></li>
+                <li><a href="#filme16">16. [Parasita ]</a></li>
+                <li><a href="#filme17">17. [A Vida é Bela ]</a></li>
+                <li><a href="#filme18">18. [Interstellar ]</a></li>
+                <li><a href="#filme19">19. [Hereditário ]</a></li>
+                <li><a href="#filme20">20. [Jurassic Park ]</a></li>
+            </ol>
+        </nav>
+    </aside>
+
+    <main id="main-content">
+
+        <h2>O Meu Ranking Pessoal: A Locadora de Filmes Favoritos</h2>
+        <p>Role para ver os 20 filmes e clique nas opções "Emprestar" ou "Vender" para simular a transação.</p>
+
+        <!-- Seções de filmes -->
+        <section class="movie-ranking" id="filme1">
+            <div class="ranking-header">
+                <h3>#1: O Poderoso Chefão (1972)</h3>
+                <span class="rank-number">1º Lugar</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Filme 2 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/3/3b/ShawshankRedemptionMoviePoster.jpg" alt="Um Sonho de Liberdade">
-        <div class="movie-content">
-            <h3>#2: Um Sonho de Liberdade (1994)</h3>
-            <p>História de esperança e amizade na prisão. Inspira e emociona a cada cena.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+            <p>Um épico da máfia, mostrando a ascensão e queda da família Corleone.</p>
+            <img src="https://br.web.img3.acsta.net/medias/nmedia/18/90/93/20/20120876.jpg" alt="Poster do Filme 1" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme1', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme1', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme1">Disponível para locação.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Filme 3 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/3/3c/Dark_Knight.jpg" alt="Batman: O Cavaleiro das Trevas">
-        <div class="movie-content">
-            <h3>#3: Batman: O Cavaleiro das Trevas (2008)</h3>
-            <p>Filme de super-herói definitivo. Heath Ledger brilha como Coringa em uma Gotham sombria.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#2: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">2º Lugar</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Filme 4 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/3/3b/Pulp_Fiction.jpg" alt="Pulp Fiction">
-        <div class="movie-content">
-            <h3>#4: Pulp Fiction (1994)</h3>
-            <p>Narrativa não-linear e diálogos icônicos de Quentin Tarantino. Um clássico cult.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Filme 5 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/3/32/Schindlers_List_movie.jpg" alt="A Lista de Schindler">
-        <div class="movie-content">
-            <h3>#5: A Lista de Schindler (1993)</h3>
-            <p>Um retrato poderoso do Holocausto, mostrando coragem e humanidade em tempos sombrios.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#3: O Senhor dos Anéis: A Sociedade do Anel 3(1994)</h3>
+                <span class="rank-number">3º Lugar</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Filme 6 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/8/87/The_Lord_of_the_Rings_-_The_Return_of_the_King.jpg" alt="O Retorno do Rei">
-        <div class="movie-content">
-            <h3>#6: O Senhor dos Anéis: O Retorno do Rei (2003)</h3>
-            <p>O épico final da trilogia de Tolkien, com batalhas grandiosas e narrativa magistral.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+            <p>Um jovem hobbit chamado Frodo recebe a missão de destruir um anel poderoso que ameaça a Terra Média, iniciando uma épica jornada cheia de amizade e perigos.</p>
+            <img src="https://static.wikia.nocookie.net/terramedia/images/9/91/O_Senhor_dos_An%C3%A9is_-_A_Sociedade_do_Anel.jpg/revision/latest?cb=20060903045708" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Filme 7 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/6/67/Forrest_Gump_poster.jpg" alt="Forrest Gump">
-        <div class="movie-content">
-            <h3>#7: Forrest Gump (1994)</h3>
-            <p>Um homem simples vivencia eventos históricos e mostra que gentileza e amor importam.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#4: O Senhor dos Anéis: As Duas Torres (1994)</h3>
+                <span class="rank-number">4º Lugar</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Filme 8 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/2/2e/Inception_%282010%29.jpg" alt="A Origem">
-        <div class="movie-content">
-            <h3>#8: A Origem (2010)</h3>
-            <p>Um thriller de ficção científica sobre sonhos, realidade e um conceito visual inovador.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+            <p>A Sociedade do Anel se separa, e a Terra Média enfrenta batalhas épicas enquanto Frodo e Sam continuam sua missão de destruir o Anel..</p>
+            <img src="https://br.web.img2.acsta.net/medias/nmedia/18/92/34/89/20194741.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Filme 9 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/f/fc/Fight_Club_poster.jpg" alt="Clube da Luta">
-        <div class="movie-content">
-            <h3>#9: Clube da Luta (1999)</h3>
-            <p>Crítica social sobre consumismo e identidade. Violento, inteligente e inesquecível.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#5: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">5º Lugar</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Filme 10 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/c/c1/The_Matrix_Poster.jpg" alt="Matrix">
-        <div class="movie-content">
-            <h3>#10: Matrix (1999)</h3>
-            <p>Um marco na ficção científica e ação, questionando a realidade com efeitos inovadores.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Filme 11 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/0/0c/Seven_Samurai.jpg" alt="Os Sete Samurais">
-        <div class="movie-content">
-            <h3>#11: Os Sete Samurais (1954)</h3>
-            <p>Clássico japonês de samurais, influenciando filmes de ação e épicos ao redor do mundo.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#6: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">6º Lugar</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Filme 12 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/8/86/Spirited_Away_Japanese_Poster.jpg" alt="A Viagem de Chihiro">
-        <div class="movie-content">
-            <h3>#12: A Viagem de Chihiro (2001)</h3>
-            <p>Animação do Studio Ghibli com fantasia rica e personagens inesquecíveis.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Filme 13 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/5/5b/Parasite_poster.jpg" alt="Parasita">
-        <div class="movie-content">
-            <h3>#13: Parasita (2019)</h3>
-            <p>Família pobre infiltra-se na vida de uma família rica, expondo desigualdades sociais com humor e tensão.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#7: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">7º Lugar</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Filme 14 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/d/dc/Cinema_Paradiso_poster.jpg" alt="Cinema Paradiso">
-        <div class="movie-content">
-            <h3>#14: Cinema Paradiso (1988)</h3>
-            <p>Uma homenagem ao cinema e à memória de um garoto e seu amigo projecionista.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Filme 15 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/8/85/The_Big_Lebowski_poster.jpg" alt="O Grande Lebowski">
-        <div class="movie-content">
-            <h3>#15: O Grande Lebowski (1998)</h3>
-            <p>Comédia icônica sobre confusões de um homem preguiçoso conhecido como “The Dude”.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#8: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">8º Lugar</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Filme 16 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/d/d2/Back_to_the_Future.jpg" alt="De Volta para o Futuro">
-        <div class="movie-content">
-            <h3>#16: De Volta para o Futuro (1985)</h3>
-            <p>Marty McFly viaja no tempo e precisa garantir que seus pais se encontrem para não desaparecer.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Filme 17 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/4/41/Psycho_%281960%29.jpg" alt="Psicose">
-        <div class="movie-content">
-            <h3>#17: Psicose (1960)</h3>
-            <p>Suspense de Alfred Hitchcock, com a icônica cena do chuveiro e trama surpreendente.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#9: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">9º Lugar</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Filme 18 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/3/34/The_Green_Mile_poster.jpg" alt="À Espera de um Milagre">
-        <div class="movie-content">
-            <h3>#18: À Espera de um Milagre (1999)</h3>
-            <p>História tocante de compaixão e fé em um corredor da morte.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Filme 19 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/b/bc/Interstellar_film_poster.jpg" alt="Interestelar">
-        <div class="movie-content">
-            <h3>#19: Interestelar (2014)</h3>
-            <p>Odisseia espacial épica explorando amor, tempo e a sobrevivência da humanidade.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#10: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">10º Lugar</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Filme 20 -->
-    <div class="movie">
-        <img src="https://upload.wikimedia.org/wikipedia/pt/8/87/Cidade_de_Deus.jpg" alt="Cidade de Deus">
-        <div class="movie-content">
-            <h3>#20: Cidade de Deus (2002)</h3>
-            <p>Retrato intenso da violência no Rio de Janeiro, com estilo visual inovador e narrativa envolvente.</p>
-            <div class="actions">
-                <button class="emprestar">Emprestar (R$ 5,00)</button>
-                <button class="vender">Vender (R$ 30,00)</button>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-</main>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#11: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">11º Lugar</span>
+            </div>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+            </div>
+        </section>
 
-<footer>
-    &copy; 2025 A Locadora Pessoal - Todos os direitos reservados
-</footer>
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#12: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">12º Lugar</span>
+            </div>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+            </div>
+        </section>
+
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#13: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">13º Lugar</span>
+            </div>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+            </div>
+        </section>
+
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#14: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">14º Lugar</span>
+            </div>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+            </div>
+        </section>
+
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#15: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">15º Lugar</span>
+            </div>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+            </div>
+        </section>
+
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#16: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">16º Lugar</span>
+            </div>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+            </div>
+        </section>
+
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#17: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">'17º Lugar</span>
+            </div>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+            </div>
+        </section>
+
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#18: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">18º Lugar</span>
+            </div>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+            </div>
+        </section>
+
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#19: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">19º Lugar</span>
+            </div>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+            </div>
+        </section>
+
+        <section class="movie-ranking" id="filme2">
+            <div class="ranking-header">
+                <h3>#20: Um Sonho de Liberdade (1994)</h3>
+                <span class="rank-number">20º Lugar</span>
+            </div>
+            <p>Drama sobre amizade, esperança e sobrevivência dentro de uma prisão.</p>
+            <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/16/48/20083748.jpg" alt="Poster do Filme 2" class="movie-poster">
+            <div class="locadora-actions">
+                <button class="action-btn emprestar-btn" onclick="simularLocacao('filme2', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                <button class="action-btn vender-btn" onclick="simularLocacao('filme2', 'Vender')">Vender (R$ 30,00)</button>
+                <p class="status-locacao" id="status-filme2">Disponível para locação.</p>
+            </div>
+        </section>
+
+        <script>
+        const filmes = [
+          
+        ];
+
+        const main = document.getElementById('main-content');
+
+        filmes.forEach(f => {
+            const sec = document.createElement('section');
+            sec.className = 'movie-ranking';
+            sec.id = f.id;
+            sec.innerHTML = `
+                <div class="ranking-header">
+                    <h3>#${f.id.replace('filme','')}: ${f.titulo}</h3>
+                    <span class="rank-number">${f.id.replace('filme','')}º Lugar</span>
+                </div>
+                <p>${f.descricao}</p>
+                <img src="caminho/para/poster-${f.id}.jpg" alt="Poster do ${f.titulo}" class="movie-poster">
+                <div class="locadora-actions">
+                    <button class="action-btn emprestar-btn" onclick="simularLocacao('${f.id}', 'Emprestar')">Emprestar (R$ 5,00)</button>
+                    <button class="action-btn vender-btn" onclick="simularLocacao('${f.id}', 'Vender')">Vender (R$ 30,00)</button>
+                    <p class="status-locacao" id="status-${f.id}">Disponível para locação.</p>
+                </div>
+            `;
+            main.appendChild(sec);
+        });
+        </script>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 Ranking Pessoal de Filmes. Todos os direitos reservados.</p>
+        </footer>
+
+        <script src="locadora.js"></script>
+    </main>
+</div>
 
 </body>
 </html>
